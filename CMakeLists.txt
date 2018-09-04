@@ -229,13 +229,14 @@ endif()
 #============================================================================
 # Example binaries
 #============================================================================
-
+if(HAVE_ZLIB_EXAMPLES)
 add_executable(example test/example.c)
 target_link_libraries(example zlib)
 add_test(example example)
 
 add_executable(minigzip test/minigzip.c)
 target_link_libraries(minigzip zlib)
+endif()
 
 if(HAVE_OFF64_T)
     add_executable(example64 test/example.c)
